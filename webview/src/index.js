@@ -1,6 +1,6 @@
 import { $, setVar } from './util.js';
 import { pasteCode } from './code.js';
-import { takeSnap, cameraFlashAnimation } from './snap.js';
+import { takeSnap, cameraFlashAnimation, setSnapScale } from './snap.js';
 
 const navbarNode = $('#navbar');
 const windowControlsNode = $('#window-controls');
@@ -35,8 +35,14 @@ window.addEventListener('message', ({ data: { type, ...cfg } }) => {
       roundedCorners,
       showWindowControls,
       showWindowTitle,
-      windowTitle
+      windowTitle,
+      snapScale
     } = config;
+
+    // Set the snapshot scale factor
+    if (snapScale !== undefined) {
+      setSnapScale(snapScale);
+    }
 
     setVar('ligatures', fontLigatures ? 'normal' : 'none');
     if (typeof fontLigatures === 'string') setVar('font-features', fontLigatures);

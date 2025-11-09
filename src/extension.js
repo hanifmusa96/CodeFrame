@@ -29,7 +29,8 @@ const getConfig = async (context) => {
     'container.containerPadding',
     'container.roundedCorners',
     'container.showWindowControls',
-    'container.showWindowTitle'
+    'container.showWindowTitle',
+    'screenshot.snapScale'
   ]);
 
   const updatedExtensionSettings = {};

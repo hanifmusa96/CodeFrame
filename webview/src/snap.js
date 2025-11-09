@@ -6,7 +6,15 @@ const snippetContainerNode = $('#snippet-container');
 
 const flashFx = $('#flash-fx');
 
-const SNAP_SCALE = 2;
+let SNAP_SCALE = 2; // Default value
+
+/**
+ * Sets the snapshot scale factor.
+ * @param {number} scale - The scale factor for screenshots (1-10).
+ */
+const setSnapScale = (scale) => {
+  SNAP_SCALE = Math.max(1, Math.min(10, scale)); // Clamp between 1 and 10
+};
 
 /**
  * Triggers a camera flash animation effect.
@@ -60,4 +68,4 @@ const takeSnap = async (config) => {
   setVar('container-background-color', config.backgroundColor);
 };
 
-export { cameraFlashAnimation, takeSnap };
+export { cameraFlashAnimation, takeSnap, setSnapScale };

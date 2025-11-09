@@ -133,6 +133,14 @@
           "type": "boolean",
           "default": false,
           "description": "Display window title with open folder / file name"
+        },
+        "codeframe.screenshot.snapScale": {
+          "scope": "resource",
+          "type": "number",
+          "default": 2,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "The resolution scale factor for screenshots (higher = better quality but larger file size)"
         }
       }
     }
